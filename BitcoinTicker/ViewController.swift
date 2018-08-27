@@ -79,20 +79,14 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     
     func updateBitcoinData(json : JSON) {
         
-//        if let tempResult = json["main"]["temp"].double {
-//
-//        weatherData.temperature = Int(round(tempResult!) - 273.15)
-//        weatherData.city = json["name"].stringValue
-//        weatherData.condition = json["weather"][0]["id"].intValue
-//        weatherData.weatherIconName =    weatherData.updateWeatherIcon(condition: weatherData.condition)
-//        }
-//
-//        updateUIWithWeatherData()
+        if let tempResult = json["ask"].double {
+
+        bitcoinPriceLabel.text = String(tempResult)
+    
+        } else {
+            bitcoinPriceLabel.text = "Price Unavailable"
+        }
     }
     
-
-
-
-
 }
 
